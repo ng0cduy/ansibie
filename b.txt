@@ -1,0 +1,2 @@
+this is the b.txt
+test read file content

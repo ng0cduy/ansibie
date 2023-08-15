@@ -1,0 +1,19 @@
+---
+  - name: “Orchestration example”
+    hosts: logicservers #Server group
+    serial: 1 #sequential tasks:
+
+    tasks:
+
+    - name: “Shutdown Server” #Task name
+      debug:
+        msg: “Shutdown {{ inventory_hostname }}” #print message embedded with inventory_hostname
+    - name: “Upgrade Firmware” #Task name
+      debug:
+        msg: “Upgrade {{ inventory_hostname }}”
+    - name: “Start Server” #Task name
+      debug:
+        msg: “Start {{ inventory_hostname }}”
+    - name: “Verify Server” #Task name
+      debug:
+        msg: “Verify {{ inventory_hostname }}”

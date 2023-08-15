@@ -1,0 +1,17 @@
+---
+  - name: "My challenge play"
+    hosts: localhost
+
+    tasks:
+
+      - name: "test ping"
+        ping:
+      - name: "find module"
+        find:
+          path: ~/Desktop/project/ansible_tut
+          file_type: file
+      - name: display multiple file contents
+        ansible.builtin.debug: var=item
+        with_file:
+          - "a.txt"
+          - "b.txt"
